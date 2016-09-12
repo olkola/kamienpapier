@@ -11,7 +11,7 @@ var player = {
 };
 
 
-var round = 0
+var round = 0;
 
 var newGame = function() {
 	computer.score = 0;
@@ -24,14 +24,14 @@ var newGame = function() {
 	var buttons = document.getElementsByClassName('pick-button');
 		for(var i = 0; i < buttons.length; i++) {
 			buttons[i].style.visibility = 'visible';
-		};
+		}
 };
 
 function playerPick(pick) {
 	player.pick = pick;
 	computerPick();
 	checkResult();
-};
+}
 
 function computerPick() {
 	switch (Math.floor(Math.random()*3)) {
@@ -47,33 +47,33 @@ function computerPick() {
 function checkResult() {
 	var gameResult;
 	if (player.pick === computer.pick) {
-		gameResult = 'tie!'
+		gameResult = 'tie!';
 	}
 	else if (player.pick === 'rock') {
 		if (computer.pick === 'scissors') {
 			player.score++; 
-			gameResult = 'Player wins!'
+			gameResult = 'Player wins!';
 		} else if (computer.pick === 'paper') {
 			computer.score++; 
-			gameResult = "Computer wins!"
+			gameResult = "Computer wins!";
 		}
 	}
 	else if (player.pick === "paper") {
 		if (computer.pick === "rock") {
-			player.score++; gameResult = "Player wins!"
+			player.score++; gameResult = "Player wins!";
 		} else if (computer.pick === "scissors") {
-			computer.score++; gameResult = "Computer wins!"
+			computer.score++; gameResult = "Computer wins!";
 		}
 	} else if (player.pick === "scissors") {
 		if (computer.pick === "paper") {
-			player.score++; gameResult = "Player wins!"
+			player.score++; gameResult = "Player wins!";
 		} else if (computer.pick === "rock") {
-			computer.score++; gameResult = "Computer wins!"
+			computer.score++; gameResult = "Computer wins!";
 		}
 	}
 
-	document.getElementById("computerPick").innerHTML = computer.pick
-	document.getElementById("playerPick").innerHTML = player.pick
+	document.getElementById("computerPick").innerHTML = computer.pick;
+	document.getElementById("playerPick").innerHTML = player.pick;
 	document.getElementById("gameResult").innerHTML = gameResult;
 	document.getElementById("playerScore").innerHTML = player.score;
 	document.getElementById("computerScore").innerHTML = computer.score;
@@ -86,6 +86,6 @@ function checkResult() {
 		} var buttons = document.getElementsByClassName("pick-button");
 		for(var i = 0; i < buttons.length; i++) {
 			buttons[i].style.visibility = 'hidden';
-		};
+		}
 	} 
 }
